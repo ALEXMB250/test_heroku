@@ -13,21 +13,27 @@ $text = $_POST["text"];
 // Ceci est le premier écran de menu
 
 if($text == "") {
-    $response = "CON What do you want to check \n";
-    $response .= "1. My Account No \n";
-    $response .= "2. My Phone Number \n";
+    $response = "CON Option Insécurité à Lubumbashi \n";
+    $response .= "1. Signaler un cambriolage \n";
+    $response .= "2. Créer un compte \n";
 
 } 
 
 else if ($text == "1") {
-    $response = "CON Choose account information you want to view \n";
-    $response .= "1. Account Number \n";
-    $response .= "2. Account Balance \n";
+    $response = "Bonjour la police c'est Judith \n";
+    $response .= "à la rue busira au quartier Lufira n°50, \n";
+    $response .= "commune Katuba signale un cambriolage \n";
+    $response .= "END #Au secour insécurité \n";
 
 }
 
 else if ($text == "2") {
-    $response = "END Your phone number is ".$phoneNumber;
+    $response = "CON Votre nom est ".$phoneNumber;
+
+}
+
+else if ($text == "2*1") {
+    $response = "CON Votre nom est ".$phoneNumber;
 
 }
 
