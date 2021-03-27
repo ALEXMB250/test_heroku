@@ -70,16 +70,29 @@
     else if($ussd_string_exploded[0] == 2 && $level == 11)
     {
         $response  = "CON Cher(e) ".$ussd_string_exploded[1]." ".$ussd_string_exploded[2]." ".$ussd_string_exploded[2];
-        $response .= "CON votre enregistrement à l'avenue/rue ".$ussd_string_exploded[5]." N°".$ussd_string_exploded[6]." ";
-        $response .= "CON au quartier ".$ussd_string_exploded[7]." commune ".$ussd_string_exploded[8]." ";
-        $response .= "CON dans la ville de ".$ussd_string_exploded[9]." dans la province ".$ussd_string_exploded[10]." ";
-        $response .= "CON Confirmez-vous toutes ces informations ?";
-        $response .= "CON 1.Oui ?";
-        $response .= "CON 2.Non ?";
+        $response .= "votre enregistrement à l'avenue/rue ".$ussd_string_exploded[5]." N°".$ussd_string_exploded[6]." ";
+        $response .= "au quartier ".$ussd_string_exploded[7]." commune ".$ussd_string_exploded[8]." ";
+        $response .= "dans la ville de ".$ussd_string_exploded[9]." dans la province ".$ussd_string_exploded[10].".\n";
+        $response .= "Confirmez-vous toutes ces informations ?\n";
+        $response .= "1.Oui ?\n";
+        $response .= "2.Non ?";
     }
-    else if ($text == "2*1") 
+    else if ($ussd_string_exploded[0] == 2 && $level == 12) 
     {
-        $response = "END Felicitation vous êtes enregistré à notre service. "; //1
+        $data=array(
+            'numTel'=>$phonenumber,
+            'nom' =>$ussd_string_exploded[1],
+            'postnom' =>$ussd_string_exploded[2],
+            'prenom' => $ussd_string_exploded[3],
+            'genre' => $ussd_string_exploded[4],
+            'rue_avenue' => $ussd_string_exploded[5],
+            'numero' => $ussd_string_exploded[6],
+            'quartier' => $ussd_string_exploded[7],
+            'commune' => $ussd_string_exploded[8],
+            'ville' => $ussd_string_exploded[9],
+            'province' => $ussd_string_exploded[10]
+        );
+        $response = "END Felicitation".$data["prenom"]." vous êtes enregistré à notre service. ";
     }
     
     
