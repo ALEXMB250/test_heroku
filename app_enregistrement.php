@@ -18,13 +18,13 @@
     $level = count($ussd_string_exploded);
     
     if ($text == "" ) {
-        $response = "CON Option Insécurité à Lubumbashi \n";
-        $response .= "1. Signaler un cambriolage \n";
+        $response = "CON Option d'enregistrement \n";
+        $response .= "1. Mon compte \n";
         $response .= "2. Créer un compte \n";
     }
     else if ($text == "1") 
     {
-        $response = "Bonjour la police c'est Judith \n";
+        $response = "Bonjour c'est Judith \n";
         $response .= "à la rue busira au quartier Lufira n°50, \n";
         $response .= "commune Katuba signale un cambriolage \n";
         $response .= "END #Au secour insécurité \n";

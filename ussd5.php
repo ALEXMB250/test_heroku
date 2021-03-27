@@ -1,9 +1,11 @@
 <?php
 
-    $sessionId   = $_POST["sessionId"];
-    $serviceCode = $_POST["serviceCode"];
-    $phoneNumber = $_POST["phoneNumber"];
-    $text        = $_POST["text"];
+    // $sessionId   = $_POST["sessionId"];
+    // $serviceCode = $_POST["serviceCode"];
+    // $phoneNumber = $_POST["phoneNumber"];
+    $_POST["text"] = "fksjhdfhk";
+
+    $text = $_POST["text"];
 
     // use explode to split the string text response from Africa's talking gateway into an array.
     // utilise exploser pour diviser la réponse textuelle de chaîne de la passerelle parlante de l'Afrique en un tableau.
@@ -14,6 +16,10 @@
     // Obtient le numéro de niveau de menu ussd de la passerelle
 
     $level = count($ussd_string_exploded);
+
+    print_r($ussd_string_exploded);
+    echo "--------";
+    print_r($level);die();
 
     if ($text == "") {
 
