@@ -28,8 +28,18 @@ else if ($text == "1") {
 }
 
 else if ($text == "2") {
-    $response = "CON Votre nom est ".$phoneNumber;
+    $response = "CON Votre nom est s'il vous plait ";
 
+}
+
+elseif ($ussd_string_exploded[0] == 2 && $level == 3) {
+    // $ response = "CON Veuillez entrer votre nom de famille" ;
+    $response = "CON Votre postnom est s'il vous plait";
+}
+
+elseif ($ussd_string_exploded[0] == 2 && $level == 4) {
+    // $ response = "CON Veuillez entrer votre email" ;            
+    $response = "CON Please enter your email";
 }
 
 else if ($text == "2*1") {
