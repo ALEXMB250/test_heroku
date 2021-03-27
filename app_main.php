@@ -10,42 +10,39 @@
     // $text=$_GET['USSD_STRING'];
     // $phonenumber=$_GET['MSISDN'];
     // $serviceCode=$_GET['serviceCode'];
+    $ussd_string_exploded = explode("*", $text);
 
+    // Get ussd menu level number from the gateway
+    // Obtient le numéro de niveau de menu ussd de la passerelle
 
-    $level = explode("*", $text);
+    $level = count($ussd_string_exploded);
+    
     if ($text == "" ) {
+        $response = "CON Option Insécurité à Lubumbashi \n";
+        $response .= "1. Signaler un cambriolage \n";
+        $response .= "2. Créer un compte \n";
     }
     else if ($text == "1") 
-    {    
+    {
+        $response = "Bonjour la police c'est Judith \n";
+        $response .= "à la rue busira au quartier Lufira n°50, \n";
+        $response .= "commune Katuba signale un cambriolage \n";
+        $response .= "END #Au secour insécurité \n";
     }
     else if ($text == "2") 
-    {        
+    {
+        $response = "CON Votre nom est s'il vous plait ";
     }
-    if(isset($level[0]) && $level[0]!="" && !isset($level[1]))
+    if($ussd_string_exploded[0] == 2 && $level == 3)
     {
+        $response = "CON Votre prenom est s'il vous plait ";
     }
-    else if(isset($level[1]) && $level[1]!="" && !isset($level[2]))
+    else if($ussd_string_exploded[0] == 2 && $level == 4)
     {
+        $response = "END Merci".$level[0]."pour vous inscrire.\nNous vous tiendrons au courant" ;
     }
-    else if(isset($level[2]) && $level[2]!="" && !isset($level[3]))
-    {
-    }
-    else if(isset($level[3]) && $level[3]!="" && !isset($level[4]))
-    {
-    }else if(isset($level[4]) && $level[4]!="" && !isset($level[5]))
-    {
-    }
-    else if(isset($level[5]) && $level[5]!="" && !isset($level[6]))
-    {
-    }
-    else if(isset($level[6]) && $level[6]!="" && !isset($level[7]))
-    {
-    }else if(isset($level[7]) && $level[7]!="" && !isset($level[8]))
-    {
-    }else if(isset($level[8]) && $level[8]!="" && !isset($level[9]))
-    {
-    }
-
+    
+    
     header('Content-type: text/plain');
     echo $response;
 
