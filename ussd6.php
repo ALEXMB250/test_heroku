@@ -36,9 +36,7 @@
                 'electoral_ward' => $level[1],
                 'national_id'=>$level[2]
                 );
-
-            
-
+                
             // $response="END Thank you ".$level[0]." for registering.\nWe will keep you updated"; 
             $response = "FIN Merci".$level[0]."pour vous inscrire.\nNous vous tiendrons au courant" ;
     }
