@@ -15,7 +15,8 @@
     // Get ussd menu level number from the gateway
     // Obtient le numéro de niveau de menu ussd de la passerelle
 
-    $level = count($ussd_string_exploded);
+    // $level = count($ussd_string_exploded);
+    $level = explode("*", $text);
     
     if ($text == "" ) {
         $response = "CON Option Insécurité à Lubumbashi \n";
@@ -39,7 +40,7 @@
     }
     else if($ussd_string_exploded[0] == 2 && $level == 3)
     {
-        $response = "END Merci".$level[0]."pour vous inscrire.\nNous vous tiendrons au courant" ;
+        $response = "END Merci ".$level[0]." pour vous inscrire.\nNous vous tiendrons au courant" ;
     }
     
     
