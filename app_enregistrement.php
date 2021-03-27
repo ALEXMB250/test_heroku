@@ -39,7 +39,7 @@
     }
     else if($ussd_string_exploded[0] == 2 && $level == 3)
     {
-        $response = "END Merci ".$ussd_string_exploded[0]." pour vous inscrire.\nNous vous tiendrons au courant" ;
+        $response = "END Merci ".$ussd_string_exploded[1]." pour vous inscrire.\nNous vous tiendrons au courant" ;
     }
     
     
