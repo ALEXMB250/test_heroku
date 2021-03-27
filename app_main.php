@@ -33,11 +33,11 @@
     {
         $response = "CON Votre nom est s'il vous plait ";
     }
-    if($ussd_string_exploded[0] == 2 && $level == 3)
+    if($ussd_string_exploded[0] == 2 && $level == 1)
     {
         $response = "CON Votre prenom est s'il vous plait ";
     }
-    else if($ussd_string_exploded[0] == 2 && $level == 4)
+    else if($ussd_string_exploded[0] == 2 && $level == 2)
     {
         $response = "END Merci".$level[0]."pour vous inscrire.\nNous vous tiendrons au courant" ;
     }
